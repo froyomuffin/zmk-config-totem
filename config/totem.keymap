@@ -16,10 +16,12 @@
 #define Base        0
 #define LMOD        1
 #define RMOD        2
+#define CONFIG      3
 
 #define BA          0
 #define LM          1
 #define RM          2
+#define CO          3
 
 &kscan0 {
     debounce-press-ms = <5>;
@@ -91,7 +93,7 @@
                    &gresc      &trans      &kp UP         &trans        &trans       &trans     &trans       &trans       &kp MINUS   &kp EQUAL
                    &kp TAB     &kp LEFT    &kp DOWN       &kp RIGHT     &trans       &trans     &trans       &trans       &kp LBKT    &kp RBKT
 &trans             &trans      &trans      &trans         &trans        &trans       &trans     &trans       &trans       &kp SEMI    &kp SQT              &trans
-                                           &kp LGUI       &trans        &kp LGUI     &trans     &trans       &trans
+                                           &kp LGUI       &trans        &kp LGUI     &trans     &mo CO       &trans
             >;
         };
 
@@ -101,7 +103,16 @@
                    &kp N1      &kp N2      &kp N3         &kp N4        &kp N5       &kp N6     &kp N7       &kp N8       &kp N9      &kp N0
                    &trans      &trans      &trans         &trans        &trans       &trans     &kp N4       &kp N5       &kp N6      &trans
 &trans             &trans      &trans      &trans         &trans        &trans       &trans     &kp N1       &kp N2       &kp N3      &trans              &kp RSHIFT
-                                           &trans         &trans        &trans       &trans     &trans       &kp C_PP
+                                           &trans         &mo CO        &trans       &trans     &trans       &kp C_PP
+            >;
+        };
+        CONFIG {
+            display-name = "CONFIG";
+            bindings = <
+                   &trans      &trans      &trans         &trans        &trans       &trans     &trans       &trans       &trans      &trans
+                   &trans      &trans      &trans         &trans        &trans       &trans     &trans       &trans       &trans      &trans
+&trans             &trans      &trans      &trans         &trans        &trans       &trans     &trans       &trans       &trans      &trans              &bootloader
+                                           &trans         &trans        &trans       &trans     &trans       &trans
             >;
         };
     };
