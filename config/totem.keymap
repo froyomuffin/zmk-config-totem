@@ -61,7 +61,39 @@
         };
     };
 
-    combos { compatible = "zmk,combos"; };
+    combos {
+// Reference
+//                   0           1           2              3             4                  5            6            7            8           9
+//                   10          11          12             13*           14                 15           16*          17           18          19
+//20                 21          22          23             24            25                 26           27           28           29          30                  31 
+//                                           32             33            34                 35           36           37
+      compatible = "zmk,combos";
+      combo_esc {
+        timeout-ms = <50>;
+        key-positions = <0 1>;
+        bindings = <&kp ESC>;
+      };
+      combo_minus {
+        timeout-ms = <50>;
+        key-positions = <7 8>;
+        bindings = <&kp MINUS>;
+      };
+      combo_equal {
+        timeout-ms = <50>;
+        key-positions = <8 9>;
+        bindings = <&kp EQUAL>;
+      };
+      combo_lbkt {
+        timeout-ms = <50>;
+        key-positions = <17 8>;
+        bindings = <&kp LBKT>;
+      };
+      combo_rbkt {
+        timeout-ms = <50>;
+        key-positions = <18 9>;
+        bindings = <&kp RBKT>;
+      };
+    };
 
     keymap {
         compatible = "zmk,keymap";
@@ -76,44 +108,44 @@
 //            >;
 //        };
 
-        Base {
-            display-name = "Base";
-            bindings = <
-                   &kp Q       &kp W       &kp E          &kp R         &kp T              &kp Y        &kp U        &kp I        &kp O       &kp P
-                   &kp A       &kp S       &kp D          &kp F         &kp G              &kp H        &kp J        &kp K        &kp L       &kp SEMICOLON
-&kp LSHIFT         &kp Z       &kp X       &kp C          &kp V         &kp B              &kp N        &kp M        &kp COMMA    &kp DOT     &kp FSLH            &kp APOSTROPHE
-                                           &kp LCTRL      &mo LM        &mt LSHIFT SPACE   &kp RET      &mo RM       &kp BSPC
-            >;
-        };
+          Base {
+              display-name = "Base";
+              bindings = <
+                     &kp Q       &kp W       &kp E          &kp R         &kp T              &kp Y        &kp U        &kp I        &kp O       &kp P
+                     &kp A       &kp S       &kp D          &kp F         &kp G              &kp H        &kp J        &kp K        &kp L       &kp SEMICOLON
+  &kp LSHIFT         &kp Z       &kp X       &kp C          &kp V         &kp B              &kp N        &kp M        &kp COMMA    &kp DOT     &kp FSLH            &kp APOSTROPHE
+                                             &kp LCTRL      &mo LM        &mt LSHIFT SPACE   &kp RET      &mo RM       &kp BSPC
+              >;
+          };
 
-        LMOD {
-            display-name = "LMOD";
-            bindings = <
-                   &gresc      &trans      &kp UP         &trans        &trans             &trans       &trans       &trans       &kp MINUS   &kp EQUAL
-                   &kp TAB     &kp LEFT    &kp DOWN       &kp RIGHT     &trans             &trans       &trans       &trans       &kp LBKT    &kp RBKT
-&trans             &trans      &trans      &trans         &trans        &trans             &trans       &trans       &trans       &kp SEMI    &kp SQT              &trans
-                                           &kp LGUI       &trans        &kp LGUI           &trans       &mo CO       &trans
-            >;
-        };
+          LMOD {
+              display-name = "LMOD";
+              bindings = <
+                     &gresc      &trans      &kp UP         &trans        &trans             &trans       &trans       &trans       &kp MINUS   &kp EQUAL
+                     &kp TAB     &kp LEFT    &kp DOWN       &kp RIGHT     &trans             &trans       &trans       &trans       &kp LBKT    &kp RBKT
+  &trans             &trans      &trans      &trans         &trans        &trans             &trans       &trans       &trans       &kp SEMI    &kp SQT              &trans
+                                             &kp LGUI       &trans        &kp LGUI           &trans       &mo CO       &trans
+              >;
+          };
 
-        RMOD {
-            display-name = "RMOD";
-            bindings = <
-                   &kp N1      &kp N2      &kp N3         &kp N4        &kp N5             &kp N6       &kp N7       &kp N8       &kp N9      &kp N0
-                   &trans      &trans      &trans         &trans        &trans             &trans       &kp N4       &kp N5       &kp N6      &trans
-&trans             &trans      &trans      &trans         &trans        &trans             &trans       &kp N1       &kp N2       &kp N3      &trans              &kp RSHIFT
-                                           &trans         &mo CO        &trans             &trans       &trans       &kp C_PP
-            >;
-        };
+          RMOD {
+              display-name = "RMOD";
+              bindings = <
+                     &kp N1      &kp N2      &kp N3         &kp N4        &kp N5             &kp N6       &kp N7       &kp N8       &kp N9      &kp N0
+                     &trans      &trans      &trans         &trans        &trans             &trans       &kp N4       &kp N5       &kp N6      &trans
+  &trans             &trans      &trans      &trans         &trans        &trans             &trans       &kp N1       &kp N2       &kp N3      &trans              &kp RSHIFT
+                                             &trans         &mo CO        &trans             &trans       &trans       &kp C_PP
+              >;
+          };
 
-        CONFIG {
-            display-name = "CONFIG";
-            bindings = <
-                   &trans      &trans      &trans         &trans        &trans           &trans       &trans       &trans       &trans      &trans
-                   &trans      &trans      &trans         &trans        &trans           &trans       &trans       &trans       &trans      &trans
-&sys_reset         &trans      &trans      &trans         &trans        &trans           &trans       &trans       &trans       &trans      &trans              &bootloader
-                                           &trans         &trans        &trans           &trans       &trans       &trans
-            >;
-        };
-    };
+          CONFIG {
+              display-name = "CONFIG";
+              bindings = <
+                     &trans      &trans      &trans         &trans        &trans           &trans       &trans       &trans       &trans      &trans
+                     &trans      &trans      &trans         &trans        &trans           &trans       &trans       &trans       &trans      &trans
+  &sys_reset         &trans      &trans      &trans         &trans        &trans           &trans       &trans       &trans       &trans      &trans              &bootloader
+                                             &trans         &trans        &trans           &trans       &trans       &trans
+              >;
+          };
+      };
 };
