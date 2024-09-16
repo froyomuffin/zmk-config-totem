@@ -16,12 +16,14 @@
 #define Base        0
 #define LMOD        1
 #define RMOD        2
-#define CONFIG      3
+#define HOLDS       3
+#define CONFIG      4
 
 #define BA          0
 #define LM          1
 #define RM          2
-#define CO          3
+#define HO          3
+#define CO          4
 
 &kscan0 {
     debounce-press-ms = <5>;
@@ -76,14 +78,13 @@
 //            >;
 //        };
 
-
         Base {
             display-name = "Base";
             bindings = <
-                   &kp Q       &kp W       &kp E          &kp R         &kp T            &kp Y      &kp U        &kp I        &kp O       &kp P
-                   &kp A       &kp S       &kp D          &kp F         &kp G            &kp H      &kp J        &kp K        &kp L       &kp SEMICOLON
-&kp LSHIFT         &kp Z       &kp X       &kp C          &kp V         &kp B            &kp N      &kp M        &kp COMMA    &kp DOT     &kp FSLH            &kp APOSTROPHE
-                                           &kp LCTRL      &mo LM        &kp SPACE        &kp RET    &mo RM       &kp BSPC
+                   &kp Q       &kp W       &kp E          &kp R         &kp T            &kp Y        &kp U        &kp I        &kp O       &kp P
+                   &kp A       &kp S       &kp D          &kp F         &kp G            &kp H        &kp J        &kp K        &kp L       &kp SEMICOLON
+&kp LSHIFT         &kp Z       &kp X       &kp C          &kp V         &kp B            &kp N        &kp M        &kp COMMA    &kp DOT     &kp FSLH            &kp APOSTROPHE
+                                           &kp LCTRL      &mo LM        &lt HO SPACE     &kp RET      &mo RM       &kp BSPC
             >;
         };
 
@@ -106,6 +107,17 @@
                                            &trans         &mo CO        &trans           &trans       &trans       &kp C_PP
             >;
         };
+
+        HOLDS {
+            display-name = "HOLDS";
+            bindings = <
+                   &trans      &trans      &trans         &trans        &trans           &trans       &trans       &trans       &trans      &trans
+                   &trans      &trans      &trans         &trans        &trans           &trans       &trans       &trans       &trans      &trans
+&trans             &trans      &trans      &trans         &trans        &trans           &trans       &trans       &trans       &trans      &trans              &trans
+                                           &trans         &trans        &kp LSHIFT       &trans       &trans       &trans
+            >;
+        };
+
         CONFIG {
             display-name = "CONFIG";
             bindings = <
