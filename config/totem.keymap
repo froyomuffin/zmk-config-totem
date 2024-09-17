@@ -85,13 +85,23 @@
       };
       combo_lbkt {
         timeout-ms = <50>;
-        key-positions = <17 8>;
+        key-positions = <17 18>;
         bindings = <&kp LBKT>;
       };
       combo_rbkt {
         timeout-ms = <50>;
-        key-positions = <18 9>;
+        key-positions = <18 19>;
         bindings = <&kp RBKT>;
+      };
+      combo_semi {
+        timeout-ms = <50>;
+        key-positions = <28 29>;
+        bindings = <&kp SEMI>;
+      };
+      combo_sqt {
+        timeout-ms = <50>;
+        key-positions = <29 30>;
+        bindings = <&kp SQT>;
       };
     };
 
