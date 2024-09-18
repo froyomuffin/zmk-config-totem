@@ -57,7 +57,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp ESC>, <&kp GRAVE>;
-            mods = <(MOD_LCTL|MOD_LSFT|MOD_RCTL|MOD_RSFT)>;
+            mods = <(MOD_LCTL|MOD_LGUI|MOD_RCTL|MOD_RGUI)>;
         };
     };
 
@@ -72,6 +72,11 @@
         timeout-ms = <50>;
         key-positions = <0 1>;
         bindings = <&gresc>;
+      };
+      combo_tilde {
+        timeout-ms = <50>;
+        key-positions = <0 1 20>;
+        bindings = <&kp TILDE>;
       };
       combo_tab {
         timeout-ms = <50>;
