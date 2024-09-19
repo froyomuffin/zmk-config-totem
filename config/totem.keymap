@@ -118,7 +118,12 @@
         key-positions = <34 35>;
         bindings = <&kp LSHIFT>;
       };
-      combo_play {
+      combo_play_l {
+        timeout-ms = <50>;
+        key-positions = <32 33>;
+        bindings = <&kp C_PP>;
+      };
+      combo_play_r {
         timeout-ms = <50>;
         key-positions = <36 37>;
         bindings = <&kp C_PP>;
