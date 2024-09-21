@@ -156,9 +156,9 @@
           LMOD {
               display-name = "LMOD";
               bindings = <
-                     &trans      &trans      &kp UP         &trans        &trans             &trans          &trans       &trans       &kp MINUS   &kp EQUAL
-                     &kp TAB     &kp LEFT    &kp DOWN       &kp RIGHT     &trans             &trans          &trans       &trans       &kp LBKT    &kp RBKT
-  &trans             &trans      &trans      &trans         &trans        &trans             &trans          &trans       &trans       &kp SEMI    &kp SQT             &trans
+                     &trans      &trans      &kp UP         &trans        &trans             &trans          &trans       &trans       &trans      &trans
+                     &trans      &kp LEFT    &kp DOWN       &kp RIGHT     &trans             &trans          &trans       &trans       &trans      &trans
+  &trans             &trans      &trans      &trans         &trans        &trans             &trans          &trans       &trans       &trans      &trans              &trans
                                              &kp LALT       &trans        &trans             &trans          &mo CO       &trans
               >;
           };
