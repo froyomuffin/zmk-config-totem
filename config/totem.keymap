@@ -17,11 +17,17 @@
 #define LMOD        1
 #define RMOD        2
 #define CONFIG      3
+#define GAME        4
+#define GAME_LMOD   5
+#define GAME_RMOD   6
 
 #define BA          0
 #define LM          1
 #define RM          2
 #define CO          3
+#define GA          4
+#define GL          5
+#define GR          6
 
 &kscan0 {
     debounce-press-ms = <5>;
@@ -159,7 +165,7 @@
                      &kp N1        &trans        &kp UP         &trans        &trans             &trans          &kp N7       &kp N8       &kp N9      &kp N0
                      &kp C_VOL_UP  &kp LEFT      &kp DOWN       &kp RIGHT     &trans             &trans          &kp N4       &kp N5       &kp N6      &kp C_VOL_UP
   &kp C_PREV         &kp C_VOL_DN  &kp C_NEXT    &trans         &trans        &trans             &trans          &kp N1       &kp N2       &kp N3      &kp C_VOL_DN        &trans
-                                                 &kp C_PP       &trans        &trans             &trans          &mo CO       &trans
+                                                 &kp C_PP       &trans        &trans             &to GA          &mo CO       &trans
               >;
           };
 
@@ -169,7 +175,7 @@
                      &kp N1        &kp N2        &kp N3         &kp N4        &kp N5             &kp N6          &kp N7       &kp N8       &kp N9      &kp N0
                      &trans        &trans        &trans         &trans        &trans             &trans          &kp N4       &kp N5       &kp N6      &kp C_VOL_UP
   &trans             &trans        &trans        &trans         &trans        &trans             &trans          &kp N1       &kp N2       &kp N3      &kp C_VOL_DN        &trans
-                                                 &trans         &mo CO        &trans             &trans          &trans       &kp C_PP
+                                                 &trans         &mo CO        &to GA             &trans          &trans       &kp C_PP
               >;
           };
 
@@ -180,6 +186,36 @@
                      &trans        &trans        &trans         &trans        &trans             &trans          &trans       &trans       &trans      &trans
   &sys_reset         &trans        &trans        &trans         &trans        &trans             &trans          &trans       &trans       &trans      &trans              &bootloader
                                                  &trans         &trans        &trans             &trans          &trans       &trans
+              >;
+          };
+
+          GAME {
+              display-name = "GAME";
+              bindings = <
+                     &kp ESC       &kp Q         &kp W          &kp E         &kp R              &kp T           &kp Y        &kp U        &kp I       &kp O
+                     &kp TAB       &kp A         &kp S          &kp D         &kp F              &kp G           &kp H        &kp J        &kp K       &kp L
+  &kp LCTRL          &kp LSHIFT    &kp Z         &kp X          &kp C         &kp V              &kp B           &kp N        &kp M        &kp COMMA   &kp DOT             &kp RET
+                                                 &trans         &mo GL        &kp SPACE          &kp SPACE       &mo GR       &trans
+              >;
+          };
+
+          GAME_LMOD {
+              display-name = "GAME_LMOD";
+              bindings = <
+                     &trans        &trans        &trans         &trans        &trans             &trans          &trans       &trans       &trans      &trans
+                     &trans        &trans        &trans         &trans        &trans             &trans          &trans       &trans       &trans      &trans
+  &trans             &trans        &trans        &trans         &trans        &trans             &trans          &trans       &trans       &trans      &trans              &trans
+                                                 &trans         &trans        &trans             &to BA          &mo CO       &trans
+              >;
+          };
+
+          GAME_RMOD {
+              display-name = "GAME_RMOD";
+              bindings = <
+                     &trans        &trans        &trans         &trans        &trans             &trans          &trans       &trans       &trans      &trans
+                     &trans        &trans        &trans         &trans        &trans             &trans          &trans       &trans       &trans      &trans
+  &trans             &trans        &trans        &trans         &trans        &trans             &trans          &trans       &trans       &trans      &trans              &trans
+                                                 &trans         &mo CO        &to BA             &trans          &trans       &trans
               >;
           };
       };
