@@ -134,6 +134,16 @@
         key-positions = <36 37>;
         bindings = <&kp C_PP>;
       };
+      combo_switch_to_base {
+        timeout-ms = <50>;
+        key-positions = <32 33 34 35 36 37>;
+        bindings = <&to BA>;
+      };
+      combo_switch_to_game {
+        timeout-ms = <50>;
+        key-positions = <33 34 35 36>;
+        bindings = <&to GA>;
+      };
     };
 
     keymap {
