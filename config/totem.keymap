@@ -99,20 +99,10 @@
         key-positions = <6 7>;
         bindings = <&kp EQUAL>;
       };
-      combo_lbkt {
+      combo_bslh {
         timeout-ms = <30>;
         key-positions = <7 8>;
-        bindings = <&kp LBKT>;
-      };
-      combo_rbkt {
-        timeout-ms = <30>;
-        key-positions = <8 9>;
-        bindings = <&kp RBKT>;
-      };
-      combo_semi {
-        timeout-ms = <30>;
-        key-positions = <17 18>;
-        bindings = <&kp SEMI>;
+        bindings = <&kp BSLH>;
       };
       combo_sqt {
         timeout-ms = <30>;
@@ -135,11 +125,6 @@
         bindings = <&kp C_PP>;
       };
       combo_switch_to_base {
-        timeout-ms = <30>;
-        key-positions = <32 33 34 35 36 37>;
-        bindings = <&to BA>;
-      };
-      combo_switch_to_base_lite {
         timeout-ms = <30>;
         key-positions = <33 34 35 36>;
         bindings = <&to BA>;
